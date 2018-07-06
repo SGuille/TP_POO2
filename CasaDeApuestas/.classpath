@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="F:/disco d/Documents/Archivos Facultad/Objetos2/2018 s1/Mockito/mockito-all-2.0.2-beta/mockito-all-2.0.2-beta.jar" sourcepath="F:/disco d/Documents/Archivos Facultad/Objetos2/2018 s1/Mockito/mockito-all-2.0.2-beta/mockito-all-2.0.2-beta.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jre1.8"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/apidocs"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/java"/>
+	<classpathentry exported="true" kind="lib" path="D:/Downloads/commons-lang3-3.7-bin/commons-lang3-3.7/commons-lang3-3.7.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

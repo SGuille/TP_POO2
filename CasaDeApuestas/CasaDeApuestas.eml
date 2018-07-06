@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="mockito-all-2.0.2-beta.jar" scope="COMPILE">
+		<srcroot url="jar://$MODULE_DIR$/../../../2018 s1/Mockito/mockito-all-2.0.2-beta/mockito-all-2.0.2-beta.jar!/"/>
+	</lib>
+	<levels>
+		<level name="jre1.8" value="project"/>
+		<level name="apidocs" value="project"/>
+		<level name="java" value="project"/>
+	</levels>
+</component>
