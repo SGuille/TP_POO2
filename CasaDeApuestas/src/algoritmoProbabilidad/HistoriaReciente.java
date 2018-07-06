@@ -11,34 +11,32 @@ import java.util.stream.Collectors;
 public class HistoriaReciente extends AlgoritmoProbabilidad {
 
     public float probabilidadDeGanarLocal(Oponente local, Oponente visitante) {
-        historial = local.getHistorialDeEnfrentamientos();
-        Collections.reverse(this.historialOrdenado(historial));
-        historialOrdenado = this.historialOrdenado(historial);
-        ganados = local.partidosGanadosPorLocal(this.primerosDiezPartidos(historialOrdenado));
+        List<Partido> ganados;
+
+        List<Partido> historialOrdenado = this.historialOrdenadoPorFechaMasReciente(local);
+        ganados = local.partidosGanadosPorLocal(this.diezPartidosMasRecientes(historialOrdenado));
 
         return this.cantidadPartidos(ganados) / 10f;
     }
 
     public float probabilidadDeGanarVisitante(Oponente local, Oponente visitante) {
-        historial = local.getHistorialDeEnfrentamientos();
-        Collections.reverse(this.historialOrdenado(historial));
-        historialOrdenado = this.historialOrdenado(historial);
-        ganados = local.partidosGanadosPorVisitante(this.primerosDiezPartidos(historialOrdenado));
+        List<Partido> ganados;
+
+        List<Partido> historialOrdenado = this.historialOrdenadoPorFechaMasReciente(local);
+        ganados = local.partidosGanadosPorVisitante(this.diezPartidosMasRecientes(historialOrdenado));
 
         return this.cantidadPartidos(ganados) / 10f;
     }
 
     public float probabilidadDeEmpatar(Oponente local, Oponente visitante) {
-
-        return (this.probabilidadDeEmpatarAux(local) + this.probabilidadDeEmpatarAux(visitante)) / 2f;
+        return (this.probabilidadDeEmpatar(local) + this.probabilidadDeEmpatar(visitante)) / 2f;
     }
 
-    public float probabilidadDeEmpatarAux(Oponente oponente) {
+    public float probabilidadDeEmpatar(Oponente oponente) {
+        List<Partido> empatados;
 
-        historial = oponente.getHistorialDeEnfrentamientos();
-        Collections.reverse(this.historialOrdenado(historial));
-        historialOrdenado = this.historialOrdenado(historial);
-        empatados = oponente.partidosEmpatados(this.primerosDiezPartidos(historialOrdenado));
+        List<Partido> historialOrdenado = this.historialOrdenadoPorFechaMasReciente(oponente);
+        empatados = oponente.partidosEmpatados(this.diezPartidosMasRecientes(historialOrdenado));
 
         return this.cantidadPartidos(empatados) / 10f;
     }
@@ -47,11 +45,23 @@ public class HistoriaReciente extends AlgoritmoProbabilidad {
         return historial.stream().sorted(Comparator.comparing(Partido::getFechaYHora)).collect(Collectors.toList());
     }
 
-    public List<Partido> primerosDiezPartidos(List<Partido> historial) {
+    public List<Partido> historialOrdenadoPorFechaMasReciente(Oponente oponente) {
+        List<Partido> historialOrdenado;
+        List<Partido> historial;
+
+        historial = oponente.getHistorialDeEnfrentamientos();
+        Collections.reverse(this.historialOrdenado(historial));
+        historialOrdenado = this.historialOrdenado(historial);
+
+        return historialOrdenado;
+    }
+
+    public List<Partido> diezPartidosMasRecientes(List<Partido> historial) {
         return this.cantidadPartidos(historial) >= 10 ? historial.subList(0,10) : historial.subList(0, this.cantidadPartidos(historial));
     }
 
     public Integer cantidadPartidos(List<Partido> partidos) {
         return partidos.size();
     }
+
 }

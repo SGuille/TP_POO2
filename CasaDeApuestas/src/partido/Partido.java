@@ -84,13 +84,9 @@ public class Partido extends Observable {
         return this.golesVisitante;
     }
 
-    public void anotarGolLocal(Integer gol) {
-        this.golesLocal += gol;
-    }
+    public void anotarGolLocal(Integer gol) { this.golesLocal += gol; }
 
-    public void anotarGolVisitante(Integer gol) {
-        this.golesVisitante += gol;
-    }
+    public void anotarGolVisitante(Integer gol) { this.golesVisitante += gol; }
 
     private void setGanador() {
         if (this.getGolesLocal() > this.getGolesVisitante()) {

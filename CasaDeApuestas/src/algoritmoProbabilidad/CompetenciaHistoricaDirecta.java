@@ -27,5 +27,4 @@ public class CompetenciaHistoricaDirecta extends AlgoritmoProbabilidad {
 
         return sizeEmpatados / (float)sizeHistorial;
     }
-
 }
