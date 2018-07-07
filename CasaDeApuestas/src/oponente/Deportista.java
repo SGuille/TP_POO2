@@ -28,4 +28,13 @@ public class Deportista extends Oponente {
 		return this.lugarNacimiento;
 	}
 
+    @Override
+    public boolean esEquipo() {
+        return false;
+    }
+
+    @Override
+    public boolean esDeportista() {
+        return true;
+    }
 }

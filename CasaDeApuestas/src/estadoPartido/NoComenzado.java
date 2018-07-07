@@ -25,4 +25,19 @@ public class NoComenzado extends EstadoPartido {
     protected void penalidadPorCancelarApuesta(Apuesta apuesta) {
         apuesta.penalidadPorCancelarApuesta(200);
     }
+
+    @Override
+    public boolean estaEnJuego() {
+        return false;
+    }
+
+    @Override
+    public boolean noHaComenzado() {
+        return true;
+    }
+
+    @Override
+    public boolean haFinalizado() {
+        return false;
+    }
 }

@@ -25,4 +25,9 @@ public abstract class EstadoPartido {
         return this.getClass().getSimpleName();
     }
 
+    public abstract boolean estaEnJuego();
+
+    public abstract boolean noHaComenzado();
+
+    public abstract boolean haFinalizado();
 }

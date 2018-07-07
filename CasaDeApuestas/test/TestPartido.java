@@ -46,15 +46,16 @@ public class TestPartido {
     @Test
     public void testPartido1GanoBoca() {
 
-        assertTrue(partido1.getLocal() instanceof Equipo);
-        assertTrue(partido1.getVisitante() instanceof Equipo);
-        assertTrue(partido1.getEstado() instanceof NoComenzado);
+        assertTrue(partido1.getLocal().esEquipo());
+        assertTrue(partido1.getVisitante().esEquipo());
+        assertTrue(partido1.noHaComenzado());
         partido1.comenzar();
-        assertTrue(partido1.getEstado() instanceof EnJuego);
+        assertTrue(partido1.estaEnJuego());
 
         assertEquals(partido1.getLocal().getNombre(), "Boca");
         partido1.anotarGolLocal(1);
-        assertTrue(partido1.getResultado() instanceof GanaLocal);
+        partido1.getResultado();
+        assertTrue(partido1.ganaLocal());
         assertEquals(partido1.ganador(), boca);
         assertEquals(partido1.getLugar(), "Quilmes");
         assertEquals(partido1.getDeporte(), futbol);
@@ -62,14 +63,15 @@ public class TestPartido {
 
     @Test
     public void testPartido2GanoRiver() {
-        assertTrue(partido2.getLocal() instanceof Equipo);
-        assertTrue(partido2.getVisitante() instanceof Equipo);
-        assertTrue(partido2.getEstado() instanceof NoComenzado);
+        assertTrue(partido2.getLocal().esEquipo());
+        assertTrue(partido2.getVisitante().esEquipo());
+        assertTrue(partido2.noHaComenzado());
         partido2.comenzar();
-        assertTrue(partido2.getEstado() instanceof EnJuego);
+        assertTrue(partido2.estaEnJuego());
 
         partido2.anotarGolVisitante(4);
-        assertTrue(partido2.getResultado() instanceof GanaVisitante);
+        partido2.getResultado();
+        assertTrue(partido2.ganaVisitante());
         assertEquals(partido2.ganador(), river);
 
         assertEquals(partido2.getVisitante().getNombre(), "River");
@@ -84,7 +86,7 @@ public class TestPartido {
 
         partido1.comenzar();
 
-        assertTrue(partido1.getEstado() instanceof EnJuego);
+        assertTrue(partido1.estaEnJuego());
     }
 
     @Test
@@ -93,7 +95,7 @@ public class TestPartido {
 
         partido2.finalizar();
 
-        assertTrue(partido2.getEstado() instanceof Finalizado);
+        assertTrue(partido2.haFinalizado());
     }
 
     @Test
@@ -101,6 +103,6 @@ public class TestPartido {
         partido1.addObserver(usuario1);
         partido1.addObserver(casaDeApuestas1);
 
-        assertTrue(partido1.getEstado() instanceof NoComenzado);
+        assertTrue(partido1.noHaComenzado());
     }
 }

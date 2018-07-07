@@ -75,4 +75,8 @@ public abstract class Oponente {
     public void setHistorialDeEnfrentamientos(HistorialDeEnfrentamientos historialDePartidos) {
         this.historialDeEnfrentamientos = historialDePartidos;
     }
+
+    public abstract boolean esEquipo();
+
+    public abstract boolean esDeportista();
 }

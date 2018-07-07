@@ -191,10 +191,6 @@ public class TestCasaDeApuestasDeportivas {
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
 
         bocaVsRiver1.anotarGolLocal(1);
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
 
         assertEquals(algoritmoProbabilidad.probabilidadDeGanarLocal(boca,river), 0.7, 0.1);
 
@@ -206,11 +202,6 @@ public class TestCasaDeApuestasDeportivas {
         casaDeApuestasDeportivas.setAlgoritmoDeProbabilidad(competenciaHistoricaDirecta);
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
 
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
-
         assertEquals(algoritmoProbabilidad.probabilidadDeGanarVisitante(boca,river), 0.2, 0.1);
 
 
@@ -221,11 +212,6 @@ public class TestCasaDeApuestasDeportivas {
 
         casaDeApuestasDeportivas.setAlgoritmoDeProbabilidad(competenciaHistoricaDirecta);
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
-
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
 
         assertEquals(algoritmoProbabilidad.probabilidadDeEmpatar(boca,river), 0.1, 0.1);
 
@@ -239,10 +225,6 @@ public class TestCasaDeApuestasDeportivas {
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
 
         bocaVsRiver1.anotarGolLocal(4);
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
 
         assertEquals(algoritmoProbabilidad.probabilidadDeGanarLocal(boca,river), 0.4, 0.1);
 
@@ -255,11 +237,6 @@ public class TestCasaDeApuestasDeportivas {
         casaDeApuestasDeportivas.setAlgoritmoDeProbabilidad(historiaReciente);
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
 
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
-
         assertEquals(algoritmoProbabilidad.probabilidadDeGanarVisitante(boca,river), 0.4, 0.1);
     }
 
@@ -268,11 +245,6 @@ public class TestCasaDeApuestasDeportivas {
 
         casaDeApuestasDeportivas.setAlgoritmoDeProbabilidad(historiaReciente);
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
-
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
 
         assertEquals(algoritmoProbabilidad.probabilidadDeEmpatar(boca,river), 0.2, 0.1);
 

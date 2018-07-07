@@ -12,4 +12,14 @@ public class DeporteGrupal extends Deporte{
 		this.tipoDeOponente = new Equipo("Equipo");
 	}
 
+    @Override
+    public boolean esUnDeporteGrupal() {
+        return true;
+    }
+
+    @Override
+    public boolean esUnDeporteIndividual() {
+        return false;
+    }
+
 }

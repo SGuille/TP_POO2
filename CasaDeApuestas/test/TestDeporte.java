@@ -35,8 +35,8 @@ public class TestDeporte {
     @Test
     public void testDeporte() {
 
-        assertTrue(futbol instanceof DeporteGrupal);
-        assertTrue(tenis instanceof DeporteIndividual);
+        assertTrue(futbol.esUnDeporteGrupal());
+        assertTrue(tenis.esUnDeporteIndividual());
 
         assertFalse(tenis.posiblesResultados().contains("Empate"));
 
@@ -50,7 +50,7 @@ public class TestDeporte {
         assertEquals(tenis.getNombre(), "tenis");
         assertEquals(futbol.getNombre(), "futbol");
 
-        assertTrue(futbol.getTipoDeOponente() instanceof Equipo);
-        assertTrue(tenis.getTipoDeOponente() instanceof Deportista);
+        assertTrue(futbol.getTipoDeOponente().esEquipo());
+        assertTrue(tenis.getTipoDeOponente().esDeportista());
     }
 }

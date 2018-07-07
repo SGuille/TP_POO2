@@ -36,4 +36,8 @@ public abstract class Deporte {
     public boolean admiteEmpate() {
 	    return posiblesResultados().contains("Empate");
     }
+
+    public abstract boolean esUnDeporteGrupal();
+
+    public abstract boolean esUnDeporteIndividual();
 }

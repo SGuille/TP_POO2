@@ -89,10 +89,10 @@ public class Partido extends Observable {
     public void anotarGolVisitante(Integer gol) { this.golesVisitante += gol; }
 
     private void setGanador() {
-        if (this.getGolesLocal() > this.getGolesVisitante()) {
+        if (ganaLocal()) {
             this.setResultado(this.getResultadoGanaLocal());
         }else{
-            if (this.getGolesVisitante() > this.getGolesLocal()) {
+            if (ganaVisitante()) {
                 this.setResultado(this.getResultadoGanaVisitante());
             }else{
                 this.setResultado(this.getResultadoEmpate());
@@ -161,5 +161,17 @@ public class Partido extends Observable {
 
     public float probabilidad(AlgoritmoProbabilidad algoritmoProbabilidad, Oponente local, Oponente visitante) {
         return getResultado().probabilidad(algoritmoProbabilidad, local, visitante);
+    }
+
+    public boolean estaEnJuego() {
+        return getEstado().estaEnJuego();
+    }
+
+    public boolean noHaComenzado() {
+        return getEstado().noHaComenzado();
+    }
+
+    public boolean haFinalizado() {
+        return getEstado().haFinalizado();
     }
 }

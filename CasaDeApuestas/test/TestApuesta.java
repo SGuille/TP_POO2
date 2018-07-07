@@ -104,7 +104,7 @@ public class TestApuesta {
         bocaVsRiver.comenzar();
         bocaVsRiver.anotarGolLocal(1);
         bocaVsRiver.finalizar();
-        assertTrue(bocaVsRiver.getResultado() instanceof GanaLocal);
+        assertTrue(bocaVsRiver.ganaLocal());
         assertTrue(apuestaFinal.esAcertada());
         assertEquals(eventoDeportivo.calcularCuota(boca, competenciaHistoricaDirecta), 1.9, 1);
         assertEquals(apuestaFinal.calcularGananciaBruta(), 167, 0);
@@ -129,7 +129,7 @@ public class TestApuesta {
 
         usuario.apostar(apuestaFinal2, 100, empate, boca);
         casaDeApuestasDeportivas.agregarApuesta(apuestaFinal2);
-        assertTrue(bocaVsRiverEmpate.getResultado() instanceof Empate);
+        assertTrue(bocaVsRiverEmpate.empate());
         assertEquals(apuestaFinal2.calcularGananciaBruta(), 0, 0);
         assertEquals(apuestaFinal2.calcularGananciaNeta(), 0, 0);
 
@@ -151,7 +151,7 @@ public class TestApuesta {
         casaDeApuestasDeportivas.agregarApuesta(apuestaFinal);
         bocaVsRiver.anotarGolLocal(2);
         bocaVsRiver.finalizar();
-        assertTrue(bocaVsRiver.getResultado()instanceof  GanaLocal);
+        assertTrue(bocaVsRiver.ganaLocal());
         assertFalse(apuestaFinal.esAcertada());
         assertEquals(apuestaFinal.calcularGananciaBruta(), 0, 0.1);
         assertEquals(apuestaFinal.calcularGananciaNeta(), 0, 0.1);
@@ -169,7 +169,7 @@ public class TestApuesta {
         casaDeApuestasDeportivas.agregarApuesta(apuestaSegura);
         riverVsBoca.anotarGolVisitante(2);
         riverVsBoca.finalizar();
-        assertTrue(riverVsBoca.getResultado() instanceof GanaVisitante);
+        assertTrue(riverVsBoca.ganaVisitante());
         assertTrue(apuestaSegura.esAcertada());
         assertEquals(eventoDeportivo2.calcularCuota(boca, historiaReciente), 1.9, 1);
         assertEquals(apuestaSegura.calcularGananciaBruta(), 161.5, 1);
@@ -196,7 +196,7 @@ public class TestApuesta {
         casaDeApuestasDeportivas.agregarApuesta(apuestaSegura);
         riverVsBoca.comenzar();
         riverVsBoca.anotarGolVisitante(2);
-        assertTrue(riverVsBoca.getResultado() instanceof GanaVisitante);
+        assertTrue(riverVsBoca.ganaVisitante());
         assertTrue(apuestaSegura.esAcertada());
         assertEquals(apuestaSegura.calcularGananciaBruta(), 0, 0.1);
         assertEquals(apuestaSegura.calcularGananciaNeta(), 0, 0.1);
@@ -220,7 +220,7 @@ public class TestApuesta {
         riverVsBoca.anotarGolLocal(3);
         riverVsBoca.anotarGolVisitante(1);
         riverVsBoca.finalizar();
-        assertTrue(riverVsBoca.getResultado() instanceof GanaLocal);
+        assertTrue(riverVsBoca.ganaLocal());
         assertFalse(apuestaSegura.esAcertada());
         assertEquals(apuestaSegura.calcularGananciaBruta(), 0, 0.1);
         assertEquals(apuestaSegura.calcularGananciaNeta(), 0, 0.1);
@@ -239,7 +239,7 @@ public class TestApuesta {
 
         usuario.apostar(apuestaSegura, 100, ganaVisitante, boca);
         casaDeApuestasDeportivas.agregarApuesta(apuestaSegura);
-        assertTrue(riverVsBoca.getResultado() instanceof Empate);
+        assertTrue(riverVsBoca.empate());
         assertFalse(apuestaSegura.esAcertada());
         assertEquals(apuestaSegura.calcularGananciaBruta(), 0, 0.1);
         assertEquals(apuestaSegura.calcularGananciaNeta(), 0, 0.1);
@@ -270,7 +270,7 @@ public class TestApuesta {
         casaDeApuestasDeportivas.agregarApuesta(apuestaSegura2);
         bocaVsRiver.comenzar();
         bocaVsRiver.anotarGolLocal(2);
-        assertTrue(bocaVsRiver.getResultado() instanceof GanaLocal);
+        assertTrue(bocaVsRiver.ganaLocal());
         assertTrue(apuestaSegura2.esAcertada());
         assertEquals(apuestaSegura2.calcularGananciaBruta(), 0, 0);
         assertEquals(apuestaSegura2.calcularGananciaNeta(), 0, 0);

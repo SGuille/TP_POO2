@@ -12,4 +12,14 @@ public class DeporteIndividual extends Deporte{
 		this.tipoDeOponente = new Deportista("nombre", "apellido", LocalDate.now(), "lugar");
 	}
 
+    @Override
+    public boolean esUnDeporteGrupal() {
+        return false;
+    }
+
+    @Override
+    public boolean esUnDeporteIndividual() {
+        return true;
+    }
+
 }

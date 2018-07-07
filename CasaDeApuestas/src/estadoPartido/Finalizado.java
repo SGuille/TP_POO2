@@ -10,6 +10,21 @@ public class Finalizado extends EstadoPartido {
     }
 
     @Override
+    public boolean estaEnJuego() {
+        return false;
+    }
+
+    @Override
+    public boolean noHaComenzado() {
+        return false;
+    }
+
+    @Override
+    public boolean haFinalizado() {
+        return true;
+    }
+
+    @Override
     public double gananciaBruta(Apuesta apuesta) { return apuesta.gananciaBrutaObtenida(); }
 
     @Override

@@ -146,10 +146,6 @@ public class TestEventoDeportivo {
         riverVsBoca3.anotarGolVisitante(2);
         riverVsBoca4.anotarGolVisitante(2);
 
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
         assertEquals(algoritmoProbabilidad.probabilidadDeGanarLocal(boca,river), 0.7, 0.1);
         assertEquals(eventoDeportivo1.calcularCuota(boca, algoritmoProbabilidad), 1.3, 0.1);
         assertEquals(eventoDeportivo1.getNombre(), "Superliga1");
@@ -162,12 +158,6 @@ public class TestEventoDeportivo {
         casaDeApuestasDeportivas.setAlgoritmoDeProbabilidad(competenciaHistoricaDirecta);
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
 
-
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
-
         assertEquals(eventoDeportivo2.calcularCuota(boca, algoritmoProbabilidad), 1.8, 0.1);
         assertEquals(eventoDeportivo2.getNombre(), "Superliga3");
         assertEquals(eventoDeportivo2.getPartido(), riverVsBoca1);
@@ -178,11 +168,6 @@ public class TestEventoDeportivo {
 
         casaDeApuestasDeportivas.setAlgoritmoDeProbabilidad(competenciaHistoricaDirecta);
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
-
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
 
         assertEquals(eventoDeportivo3.calcularCuota(boca, algoritmoProbabilidad), 1.9, 0.1);
         assertEquals(eventoDeportivo3.getNombre(), "Superliga4");
@@ -195,11 +180,6 @@ public class TestEventoDeportivo {
         casaDeApuestasDeportivas.setAlgoritmoDeProbabilidad(historiaReciente);
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
 
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
-
         assertEquals(eventoDeportivo1.calcularCuota(boca, algoritmoProbabilidad), 1.6, 0.1);
         assertEquals(eventoDeportivo1.getNombre(), "Superliga1");
         assertEquals(eventoDeportivo1.getPartido(), bocaVsRiver1);
@@ -211,11 +191,6 @@ public class TestEventoDeportivo {
         casaDeApuestasDeportivas.setAlgoritmoDeProbabilidad(historiaReciente);
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
 
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
-
         assertEquals(eventoDeportivo2.calcularCuota(boca, algoritmoProbabilidad), 1.6, 0.1);
         assertEquals(eventoDeportivo2.getNombre(), "Superliga3");
         assertEquals(eventoDeportivo2.getPartido(), riverVsBoca1);
@@ -226,11 +201,6 @@ public class TestEventoDeportivo {
 
         casaDeApuestasDeportivas.setAlgoritmoDeProbabilidad(historiaReciente);
         algoritmoProbabilidad = casaDeApuestasDeportivas.getAlgoritmoProbabilidad();
-
-        assertEquals(boca.cantidadPartidosContra(river), 20);
-        assertEquals(boca.cantidadPartidosGanadosPorLocalContra(river), 14);
-        assertEquals(boca.cantidadPartidosEmpatadosContra(river), 2);
-        assertEquals(boca.cantidadPartidosGanadosPorVisitanteContra(river), 4);
 
         assertEquals(eventoDeportivo3.calcularCuota(boca, algoritmoProbabilidad), 1.8, 0.1);
         assertEquals(eventoDeportivo3.getNombre(), "Superliga4");

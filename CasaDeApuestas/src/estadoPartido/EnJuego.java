@@ -27,4 +27,19 @@ public class EnJuego extends EstadoPartido {
     protected void penalidadPorCancelarApuesta(Apuesta apuesta) {
         apuesta.penalidadPorCancelarApuesta(apuesta.getMontoApostado() * 0.30);
     }
+
+    @Override
+    public boolean estaEnJuego() {
+        return true;
+    }
+
+    @Override
+    public boolean noHaComenzado() {
+        return false;
+    }
+
+    @Override
+    public boolean haFinalizado() {
+        return false;
+    }
 }

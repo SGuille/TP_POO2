@@ -71,7 +71,7 @@ public class CasaDeApuestasDeportivas implements Observer {
     @Override
     public void update(Observable observable, Object arg) {
         Partido partido = (Partido) observable;
-        if(arg instanceof EnJuego) {
+        if(partido.estaEnJuego()) {
             System.out.println("La " + this + " ha sido notificada de que el " + partido.getDeporte() + " está " + arg);
         }
     }
